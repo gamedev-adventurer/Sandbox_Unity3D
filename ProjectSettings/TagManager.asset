@@ -6,6 +6,11 @@ TagManager:
   tags:
   - closed
   - open
+  - LoadingScreen
+  - GameManager
+  - SavingScreen
+  - racket
+  - OutOfBounds
   layers:
   - Default
   - TransparentFX

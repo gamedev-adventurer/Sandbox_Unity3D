@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AR/DeviceSupported.unity
-    guid: 6a66896d439bb4e808d80febc4e06d33
+    path: Assets/BrickBReaker/Bricks.unity
+    guid: 0ff6cbbff9cb94eabb736434060755c7
   m_configObjects: {}
