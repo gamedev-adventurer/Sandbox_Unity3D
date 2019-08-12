@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pallet : MonoBehaviour
 {
@@ -23,5 +24,10 @@ public class Pallet : MonoBehaviour
         // Set Velocity (movement direction * speed)
         GetComponent<Rigidbody2D>().velocity = Vector2.right * h * paddleSpeed;
 
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

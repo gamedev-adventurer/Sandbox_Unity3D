@@ -11,6 +11,9 @@ TagManager:
   - SavingScreen
   - racket
   - OutOfBounds
+  - blocks
+  - barrier_top
+  - barrier_bottom
   layers:
   - Default
   - TransparentFX

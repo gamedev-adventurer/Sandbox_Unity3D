@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Ball : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed =30;
     private Rigidbody2D rigidBody2D;
 
     void Awake()
@@ -23,15 +24,54 @@ public class Ball : MonoBehaviour
             // Calculate hit Factor
             float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
 
-            //float x = col.gameObject.GetComponent<Rigidbody2D>().velocity.x;
+            
             // Calculate direction, set length to 1
             Vector2 dir = new Vector2(x, 1).normalized;
-            Debug.Log(dir);
+          
             // Set Velocity with dir * speed
             rigidBody2D.velocity = dir * speed;
         }
 
-        if(col.gameObject.tag == "OutOfBounds")
+        if(col.gameObject.tag == "blocks")
+        {
+            // Calculate hit Factor
+            float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
+
+           
+            // Calculate direction, set length to 1
+            Vector2 dir = new Vector2(x, -1).normalized;
+            
+            // Set Velocity with dir * speed
+            rigidBody2D.velocity = dir * speed;
+        }
+
+        if (col.gameObject.tag == "barrier_top")
+        {
+            // Calculate hit Factor
+            float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
+
+           
+            Vector2 dir = new Vector2(x, -1).normalized;
+           
+            // Set Velocity with dir * speed
+            rigidBody2D.velocity = dir * speed;
+        }
+
+        if (col.gameObject.tag == "barrier_bottom")
+        {
+            // Calculate hit Factor
+            float x = hitFactor(transform.position, col.transform.position, col.collider.bounds.size.x);
+
+            // Calculate direction, set length to 1
+            Vector2 dir = new Vector2(x, 1).normalized;
+
+            // Set Velocity with dir * speed
+            rigidBody2D.velocity = dir * speed;
+        }
+
+        //Debug.Log("Velocity: " + rigidBody2D.velocity);
+
+        if (col.gameObject.tag == "OutOfBounds")
         {
             SceneManager.LoadScene(0);
         }
